@@ -12,7 +12,8 @@ function beeping(index) {
       setTimeout(() => beeping(index + 1), timerArray[index + 1] * 1000);
     } else {
       // console.log('beeping');
-      console.log(timerArray[index]);
+      // console.log(timerArray[index]);
+      process.stdout.write('\x07');
       setTimeout(() => beeping(index + 1), (timerArray[index + 1] - timerArray[index]) * 1000);
     }
   } else {
@@ -30,14 +31,13 @@ const checkBeep = () => {
       nonSortArray.push(Number(args[i]));
     }
   }
-  
+
   if (!nonSortArray.length) {
     console.log('Error: There is no beep at all.');
-    process.kill();
+    process.kill;
   }
   timerArray = nonSortArray.sort((a, b) => a - b);
 };
 checkBeep();
 beeping(-1);
-
 
