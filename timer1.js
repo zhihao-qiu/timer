@@ -37,7 +37,6 @@ const checkBeep = () => {
   }
   timerArray = nonSortArray.sort((a, b) => a - b);
 };
-
 checkBeep();
 beeping(-1);
 
